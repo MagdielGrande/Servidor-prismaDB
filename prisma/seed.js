@@ -103,6 +103,35 @@ const prisma = new PrismaClient();
         },
       });
 
+      //REGISTROS PARA missionComnader
+
+      const missionComander = await prisma.missionCommander.upsert({
+        where: { name: 'Pepe 1' },
+        update: {},
+        create: {
+          name: 'Pepe 1',
+          username: 'pepe_1_user',
+          mainStack: 'Java',
+        },
+      });
+      const missionComander2 = await prisma.missionCommander.upsert({
+        where: { name: 'Pepe 2' },
+        update: {},
+        create: {
+          name: 'Pepe 2',
+          username: 'pepe_2_user',
+          mainStack: 'Java',
+        },
+      });
+      const missionComander3 = await prisma.missionCommander.upsert({
+        where: { name: 'Pepe 3' },
+        update: {},
+        create: {
+          name: 'Pepe 3',
+          username: 'pepe_3_user',
+          mainStack: 'Node',
+        },
+      });
     console.log('Create 3 explorers');
   } catch(e) {
     console.error(e);
